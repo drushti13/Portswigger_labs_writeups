@@ -5,14 +5,11 @@
 **Category:** Access Control
 **Status:** Solved ✅
 
----
-
 ## What's the lab about?
 
 The app has an admin panel that isn't protected — no authentication check, no role verification, nothing. If you find the URL, you can just access it. The goal is to find that panel and delete the user `carlos`.
-<img width="1136" height="357" alt="Screenshot 2026-06-26 154628" src="https://github.com/user-attachments/assets/017fe161-3884-4269-b9ee-a29e3cb3313e" />
+<img width="800" height="300" alt="Screenshot 2026-06-26 154628" src="https://github.com/user-attachments/assets/017fe161-3884-4269-b9ee-a29e3cb3313e" />
 
----
 
 ## What I did
 
@@ -42,6 +39,8 @@ There it is.
 
 <img width="1327" height="456" alt="Screenshot 2026-06-26 153748" src="https://github.com/user-attachments/assets/aedbf670-cf9c-42c4-a2c0-4c2f2b163aa7" />
 
+---
+
 <img width="1047" height="267" alt="Screenshot 2026-06-26 153805" src="https://github.com/user-attachments/assets/be130375-5b20-476d-80ca-7feca3891b4b" />
 
 ### Step 3 — Accessed the admin panel directly
@@ -60,14 +59,12 @@ Clicked **Delete** next to `carlos`. Done.
 
 <img width="1526" height="552" alt="Screenshot 2026-06-26 153847" src="https://github.com/user-attachments/assets/97812a90-cb18-4e39-a864-26c10154621e" />
 
----
 
 ## Why this works
 
 The developer made the URL harder to guess — but the app still has to expose it somewhere for it to function. Maybe it's embedded in JavaScript on the home page, maybe a request to the page source reveals it. Either way, Burp's passive crawling catches it without you having to do anything special.
 An unpredictable URL buys you a little obscurity, but it's still just obscurity. The real fix is enforcing access control server-side — checking whether the logged-in user actually has admin privileges before serving the page.
 
----
 
 ## Tools used
 
