@@ -11,7 +11,7 @@ The app has a login page that behaves differently depending on whether the usern
 
 The lab provides two wordlists: one containing candidate usernames and another containing candidate passwords.
 
-<img width="800" height="300" alt="image" src="https://github.com/user-attachments/assets/e4103e6c-3262-48a0-afbf-7fd86dfdbe2e" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/e4103e6c-3262-48a0-afbf-7fd86dfdbe2e" />
 
 ## What I did
 
