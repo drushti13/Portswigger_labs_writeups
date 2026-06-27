@@ -22,15 +22,17 @@ Credentials provided: `wiener:peter`
 
 Logged in with `wiener:peter`. On the My Account page, there's a **Delete account** button at the bottom. That's the target — the button the victim needs to be tricked into clicking.
 
-![Login page with wiener credentials](screenshots/basic-clickjacking-csrf-token-protection/login.png)
+<img width="1577" height="700" alt="Screenshot 2026-06-27 213655" src="https://github.com/user-attachments/assets/11cea251-568d-4539-bba1-4cc4c006ab30" />
 
-![My Account page showing the Delete account button](screenshots/basic-clickjacking-csrf-token-protection/account-page.png)
+---
+
+<img width="1497" height="723" alt="Screenshot 2026-06-27 213901" src="https://github.com/user-attachments/assets/ad8f9e25-3965-4318-bf61-1b9dfeeab9c5" />
 
 ### Step 2 — Went to the exploit server
 
 The lab provides an exploit server where you can host your own HTML and deliver it to a simulated victim. Opened the exploit server — it gives you a URL, a body editor, and a "Deliver exploit to victim" button.
 
-![Exploit server — Craft a response panel](screenshots/basic-clickjacking-csrf-token-protection/exploit-server.png)
+<img width="1192" height="807" alt="Screenshot 2026-06-27 213750" src="https://github.com/user-attachments/assets/af9b2c2e-cbb7-4a2b-aad0-e63e90d2a44f" />
 
 ### Step 3 — Crafted the clickjacking payload
 
@@ -67,13 +69,14 @@ Key things here:
 - `position: absolute` on the div with `top: 300px; left: 60px` — positions the fake button to line up with the Delete account button in the iframe
 - The CSRF token doesn't help here — because the victim is the one clicking the real button while authenticated. The browser sends their cookies automatically with the request
 
-![Exploit body showing the iframe + div CSS payload](screenshots/basic-clickjacking-csrf-token-protection/exploit-payload.png)
+<img width="1067" height="397" alt="Screenshot 2026-06-27 213759" src="https://github.com/user-attachments/assets/b4c6317d-ab94-4114-b0e4-4d3201564917" />
+
 
 ### Step 4 — Tested alignment visually
 
 Before delivering, I previewed the exploit in the browser with `opacity: 0.1` so I could see both layers. Adjusted `top` and `left` values until "Click me" was sitting directly over "Delete account."
 
-![iframe overlay visible — "Click me" aligned over "Delete account" button](screenshots/basic-clickjacking-csrf-token-protection/iframe-overlay.png)
+<img width="962" height="652" alt="Screenshot 2026-06-27 213923" src="https://github.com/user-attachments/assets/6274502b-4473-4d63-9478-27275b8212b4" />
 
 ### Step 5 — Delivered to victim
 
@@ -81,8 +84,7 @@ Once alignment looked right, stored the exploit and clicked **Deliver exploit to
 
 Lab solved.
 
-![Lab solved — Congratulations banner on exploit server page](screenshots/basic-clickjacking-csrf-token-protection/lab-solved.png)
-
+<img width="1391" height="751" alt="Screenshot 2026-06-27 213937" src="https://github.com/user-attachments/assets/43a99667-c594-462f-b47f-a6c646483bb5" />
 
 ## Why this works
 
